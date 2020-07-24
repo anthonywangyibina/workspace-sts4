@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.dqgb.parent</groupId>
+	<artifactId>wikin-parent</artifactId>
+	<version>2.4.0</version>
+	<packaging>pom</packaging>
+	<name>wikin-parent</name>
+	<description> wikin parent</description>
+	<parent>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>1.5.21.RELEASE</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<springfox.version>2.6.1</springfox.version>
+	</properties>
+	
+		<distributionManagement>
+		        <repository>
+		            <id>nexus-releases</id>
+		            <name>Nexus Release Repository</name>
+		            <url>http://10.114.72.106:8081/nexus/content/repositories/releases/</url>
+		        </repository>
+		        <snapshotRepository>
+		            <id>nexus-snapshots</id>
+		            <name>Nexus Snapshot Repository</name>
+		            <url>http://10.114.72.106:8081/nexus/content/repositories/snapshots/</url>
+		        </snapshotRepository>
+		        
+		        <site>
+		            <id>website</id>
+		            <url>file:C:\tmpSite</url>
+		        </site>
+		    </distributionManagement>
+    
+	<dependencies>
+	
+		<!-- spring boot web 集成了springMVC 和 tomcat-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- consul -->
+		<!-- <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency> -->
+		<!-- eureka -->
+		<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+		<!-- swagger -->
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        	<!--zipkin -->
+ 		<dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-starter-sleuth</artifactId>
+			</dependency>
+			<dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+			</dependency>  
+
+		<!-- spring boot test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 模板文件thymeleaf -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<!-- oracle -->
+<!-- 		<dependency>
+		    <groupId>ojdbc</groupId>
+		    <artifactId>ojdbc</artifactId>
+		    <version>16</version>
+		</dependency> -->
+		<!-- oracle19.3驱动 -->
+		<dependency>
+		  <groupId>com.oracle.ojdbc</groupId>
+		  <artifactId>ojdbc8</artifactId>
+		  <version>19.3.0.0</version>
+		</dependency>
+		<!-- MYSQL驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+            <!-- <scope>runtime</scope> -->
+        </dependency>
+		<!-- 	jpa-hibernate -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--  feign -->
+	     <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-feign</artifactId>
+	    </dependency>
+          <!--hystrix-dashboard 监控-->
+ 		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency> 
+		<!-- 配置中心客户端 -->
+		 <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+        <!-- 自动重启 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<!-- 公用工具类 -->
+			<dependency>
+		  <groupId>com.dqgb.common</groupId>
+		  <artifactId>wikin-common</artifactId>
+		  <version>2.2.1</version>
+		</dependency>
+		
+       <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
+        </dependency>
+
+        <dependency>
+		   <groupId>com.alibaba</groupId>
+		   <artifactId>druid-spring-boot-starter</artifactId>
+		   <version>1.1.10-SNAPSHOT</version>
+		</dependency>
+        
+	</dependencies>
+	
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>Dalston.SR5</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <fork>true</fork>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

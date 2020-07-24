@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: wikin-feign-client
+Implementation-Version: 2.4.1.9
+Built-By: Anthony
+Implementation-Vendor-Id: com.dqgb
+Build-Jdk: 1.8.0_102
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/wikin-feign-client
+Created-By: Maven Integration for Eclipse
+
